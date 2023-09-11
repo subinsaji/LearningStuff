@@ -13,8 +13,6 @@ class Dog:
         self.age = age
 
  
-d = Dog(32)
-print(d.get_age())
 
 
 
