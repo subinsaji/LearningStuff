@@ -1,15 +1,12 @@
 from dataclasses import dataclass
-
-
 # here is an example of regular classes
 
 class Person():
     def __init__(self, name, age, height, email):
-        self.name = name 
+        self.name = name
         self.age = age
-        self.height = height 
-        self.email = email 
-        
+        self.height = height
+        self.email = email  
 
 # However when we use the dataclasses module we need to import dataclass to use it as a decorator in the class we are 
 # creating. This means we dont need to write __innit__ function at the start. You only need attributes of the class 
@@ -34,4 +31,4 @@ class Person():
     email: str = "subin@subin.com"
     
 print(Person())
-    
+
