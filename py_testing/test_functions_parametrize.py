@@ -1,12 +1,10 @@
 import pytest
-
-from examples import (
-    addition,
-    substraction,
-    reverse_string,
-    capitalise_string,
-    clean_string,
-)
+from examples import (addition,
+                      subtraction,
+                      reverse_string,
+                      capitalise_string,
+                      clean_string,
+                      )
 
 
 # tests for simple maths
@@ -18,7 +16,7 @@ def test_addition(a,b, expected):
     
 @pytest.mark.parametrize(" a, b, expected", [(1,2,-1), (5,-1,6),],)
 def test_substraction(a,b, expected):
-    assert substraction(a, b) == expected
+    assert subtraction(a, b) == expected
     
     
 # tests for simple strings    
