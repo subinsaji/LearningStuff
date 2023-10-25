@@ -1,6 +1,6 @@
 import pytest
 
-from pytest.examples import (
+from examples import (
     addition,
     substraction,
     reverse_string,
@@ -25,8 +25,8 @@ def test_substraction(a,b, expected):
     
 @pytest.mark.parametrize( "string, expected", 
     [
-        ("hello", "olleh")
-        ("world", "dlrow")
+        ("hello", "olleh"),
+        ("world", "dlrow"),
         
         ],)
 def test_reverse_string(a,b, expected):
@@ -35,8 +35,8 @@ def test_reverse_string(a,b, expected):
     
 @pytest.mark.parametrize( "string, expected", 
     [
-        ("hello", "HELLO")
-        ("world", "WORLD")
+        ("hello", "HELLO"),
+        ("world", "WORLD"),
         
         ],)
 def test_capitalise_string(string, expected):
@@ -46,8 +46,8 @@ def test_capitalise_string(string, expected):
 
 @pytest.mark.parametrize( "string, expected", 
     [
-        ("hello", "HELLO")
-        ("world", "WORLD")
+        ("hello", "HELLO"),
+        ("world", "WORLD"),
         
         ],)
 def test_clean_string(string, expected):
