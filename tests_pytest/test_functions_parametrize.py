@@ -1,10 +1,10 @@
 import pytest
-from examples import (addition,
-                      subtraction,
-                      reverse_string,
-                      capitalise_string,
-                      clean_string,
-                      )
+from  examples import (addition,
+                                 subtraction,
+                                 reverse_string,
+                                 capitalise_string,
+                                 clean_string,
+                                 )
 
 
 @pytest.mark.parametrize( "a, b, expected",  
@@ -50,4 +50,5 @@ def test_capitalize_string(string, expected):
         (" WoRlD ", "world"),  
     ],)  
 def test_clean_string(string, expected):  
-    assert clean_string(string) == expected  
+    assert clean_string(string) == expected
+    
