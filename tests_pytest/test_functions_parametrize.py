@@ -52,3 +52,35 @@ def test_capitalize_string(string, expected):
 def test_clean_string(string, expected):  
     assert clean_string(string) == expected
     
+# parametrize test with 2 arguments and ranges
+
+
+# range gives an array array of numbers
+    
+@pytest.mark.parametrize("a", range(5))
+@pytest.mark.parametrize("b", range(10))
+def test_addition_2_args(a,b):
+    assert addition(a,b) == a + b
+    
+    
+# however not all inputs are integers and the range() func
+# is less useful in other cases
+
+# pytest also has an object called pytest_generate_tests which
+# receives the metafuc object as an arg
+#
+# metafunc object provides information about the test function
+# i.e. name, args, fixtures
+#
+# You can use the metafunc object to generate parametrized tests by
+# calling the metafunc.parametrize() method:
+
+
+def pytest_generate_tests(metafunc):
+    if 'x' in metafunc.fixturenames and 'y' in metafunc.fixturenames:
+        metafunc.parametrize('x', [1, 2, 3])
+        metafunc.parametrize('y', [5, 6, 7])
+        
+def test_addition_generate_tests(x,y):
+    assert addition(x,y) == x + y
+    
