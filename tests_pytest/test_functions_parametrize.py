@@ -4,6 +4,8 @@ from  examples import (addition,
                                  reverse_string,
                                  capitalise_string,
                                  clean_string,
+                                 area_of_triangle,
+                                 area_of_square,
                                  )
 
 
@@ -84,3 +86,20 @@ def pytest_generate_tests(metafunc):
 def test_addition_generate_tests(x,y):
     assert addition(x,y) == x + y
     
+@pytest.mark.parametrize("a, b, area_expected",
+                         [
+                           (3, 4, 6),
+                           (1, 2, 1),
+                           (2, 3, 3), 
+                         ],)
+def test_area_of_triangles(a, b, area_expected):
+    assert area_of_triangle(a,b) == area_expected
+    
+@pytest.mark.parametrize("a, b, area_expected",
+                         [
+                           (3, 4, 12),
+                           (1, 2, 2),
+                           (2, 3, 6), 
+                         ],)
+def test_area_of_square(a, b, area_expected):
+    assert area_of_square(a, b) == area_expected

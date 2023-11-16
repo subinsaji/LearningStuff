@@ -33,7 +33,7 @@ print(F_5)
 
 def fibonacci_sequence(n):
     n = n+1
-    fib = np.zeros(n) # making an empty array of n terms
+    fib = np.zeros(n) # making an empty numpy array of n+1 terms
     fib[1] = 1 # in the array the 1st position (after the 0th position) is set to 1: 0,  -->1<--  ,  1  ,  2  ,  3
     for i in range(2, n): # range() fuction has arguments: range(start, stop)
         fib[i] = fib[i-1] + fib[i-2] # F_{n} = F_{n-1} + F_{n-2}
@@ -44,7 +44,7 @@ fibonacci_sequence(10) # now running the function with n=10
 #    Things that helped me understand:
 #  - the indentation of return print(fib) needed to be in indented out of loop so for loop waits to finish then prints whole sequence
 #  - know what the range() funcion does
-#  - fib[] in square brackets just means position. In pyton the first position is always o i.e. fib[0]
+#  - fib[] in square brackets just means position. In pyton the first position is always zero i.e. fib[0]
  
     
     
