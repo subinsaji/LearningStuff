@@ -4,8 +4,8 @@ import random
 async def time_consuming_task():
     print("starting time consuming task")
     try:
-        for i in range(1,10):
-            await asyncio.sleep(random.randint(6,10))
+        for i in range(1,6):
+            await asyncio.sleep(random.randint(1,10))
             print(f"step {i} completeted")
     except asyncio.CancelledError:
         print("Time consuming task was cancelled")
@@ -13,7 +13,7 @@ async def time_consuming_task():
 
 async def main():
     task = asyncio.create_task(time_consuming_task())
-    await asyncio.sleep(random.randint(1,8))
+    await asyncio.sleep(random.randint(1,10))
     task.cancel()
     try:
         await task

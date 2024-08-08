@@ -8,17 +8,19 @@ async def fetch_url(url):
             return await response.text()
         
 
+url = [ "https://www.wikipedia.org/",
+       "https://www.google.com",
+       "https://www.facebook.com",
+       "https://www.linkedin.com",
+       "https://www.x.com",
+       "https://www.paypal.com"
+
+]
+
 async def main():
-    url_1 = "https://www.wikipedia.org/"
-    url_2 = "https://www.google.com" 
-    task_1 = asyncio.create_task(fetch_url(url_1))
-    task_2 = asyncio.create_task(fetch_url(url_2))
-
-    data_1 = await task_1
-    data_2 = await task_2
-
-    print("Data from ", url_1, len(data_1), "bytes")
-    print("Data from ", url_1, len(data_2), "bytes")
+    tasks = asyncio.create_task(fetch_url(url))
+    data_1 = await tasks
+    print("Data from ", url, len(data_1), "bytes")
 
 asyncio.run(main())
 

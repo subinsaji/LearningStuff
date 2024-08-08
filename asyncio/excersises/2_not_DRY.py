@@ -8,7 +8,7 @@ async def main():
     tasks = [
         display_name_and_delay("one second delay", 1),
         display_name_and_delay("two second delay", 2),
-        display_name_and_delay("three second delay", 10)
+        display_name_and_delay("three second delay", 3)
     ]
     await asyncio.gather(*tasks)
 
